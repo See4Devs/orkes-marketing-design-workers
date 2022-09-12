@@ -1,0 +1,26 @@
+{
+  "createdBy": "draft.dev",
+  "name": "design_request_approval",
+  "description": "Design request",
+  "retryCount": 3,
+  "timeoutSeconds": 3600,
+  "inputKeys": [
+    "client",
+    "description",
+    "audience",
+    "country",
+    "theme"
+  ],
+  "outputKeys": [
+    "approved"
+  ],
+  "timeoutPolicy": "TIME_OUT_WF",
+  "retryLogic": "FIXED",
+  "retryDelaySeconds": 60,
+  "responseTimeoutSeconds": 600,
+  "inputTemplate": {},
+  "rateLimitPerFrequency": 0,
+  "rateLimitFrequencyInSeconds": 1,
+  "pollTimeoutSeconds": 3600,
+  "backoffScaleFactor": 1
+}

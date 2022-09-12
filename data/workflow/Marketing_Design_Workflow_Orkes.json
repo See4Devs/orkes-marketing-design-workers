@@ -1,0 +1,120 @@
+{
+  "name": "Marketing_Design_Workflow_Orkes",
+  "description": "Marketing Campaign Design Workflow ORKES",
+  "version": 1,
+  "tasks": [
+    {
+      "name": "design_request_approval",
+      "taskReferenceName": "design_request_approval_ref",
+      "inputParameters": {
+        "client": "${workflow.input.client}",
+        "description": "${workflow.input.description}",
+        "audience": "${workflow.input.audience}",
+        "country": "${workflow.input.country}",
+        "theme": "${workflow.input.theme}"
+      },
+      "type": "SIMPLE",
+      "decisionCases": {},
+      "defaultCase": [],
+      "forkTasks": [],
+      "startDelay": 0,
+      "joinOn": [],
+      "optional": false,
+      "defaultExclusiveJoinTask": [],
+      "asyncComplete": false,
+      "loopOver": []
+    },
+    {
+      "name": "passed_design_request_approval",
+      "taskReferenceName": "passed_design_request_approval_ref",
+      "inputParameters": {
+        "designApproved": "${design_request_approval_ref.output.approved}"
+      },
+      "type": "SWITCH",
+      "decisionCases": {
+        "true": [
+          {
+            "name": "wait_designer",
+            "taskReferenceName": "wait_designer_ref",
+            "inputParameters": {},
+            "type": "WAIT",
+            "decisionCases": {},
+            "defaultCase": [],
+            "forkTasks": [],
+            "startDelay": 0,
+            "joinOn": [],
+            "optional": false,
+            "defaultExclusiveJoinTask": [],
+            "asyncComplete": false,
+            "loopOver": []
+          },
+          {
+            "name": "wait_campaign_manager",
+            "taskReferenceName": "wait_campaign_manager_ref",
+            "inputParameters": {},
+            "type": "WAIT",
+            "decisionCases": {},
+            "defaultCase": [],
+            "forkTasks": [],
+            "startDelay": 0,
+            "joinOn": [],
+            "optional": false,
+            "defaultExclusiveJoinTask": [],
+            "asyncComplete": false,
+            "loopOver": []
+          },
+          {
+            "name": "wait_campaign_client",
+            "taskReferenceName": "wait_campaign_client_ref",
+            "inputParameters": {},
+            "type": "WAIT",
+            "decisionCases": {},
+            "defaultCase": [],
+            "forkTasks": [],
+            "startDelay": 0,
+            "joinOn": [],
+            "optional": false,
+            "defaultExclusiveJoinTask": [],
+            "asyncComplete": false,
+            "loopOver": []
+          }
+        ]
+      },
+      "defaultCase": [
+        {
+          "name": "rejection_design_request",
+          "taskReferenceName": "rejection_design_request_ref",
+          "inputParameters": {},
+          "type": "SIMPLE",
+          "decisionCases": {},
+          "defaultCase": [],
+          "forkTasks": [],
+          "startDelay": 0,
+          "joinOn": [],
+          "optional": false,
+          "defaultExclusiveJoinTask": [],
+          "asyncComplete": false,
+          "loopOver": []
+        }
+      ],
+      "forkTasks": [],
+      "startDelay": 0,
+      "joinOn": [],
+      "optional": false,
+      "defaultExclusiveJoinTask": [],
+      "asyncComplete": false,
+      "loopOver": [],
+      "evaluatorType": "value-param",
+      "expression": "designApproved"
+    }
+  ],
+  "inputParameters": [],
+  "outputParameters": {},
+  "schemaVersion": 2,
+  "restartable": true,
+  "workflowStatusListenerEnabled": false,
+  "timeoutPolicy": "ALERT_ONLY",
+  "timeoutSeconds": 0,
+  "variables": {},
+  "inputTemplate": {}
+}
