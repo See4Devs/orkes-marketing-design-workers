@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class RejectionDesignRequest implements Worker {
     @Override
     public String getTaskDefName() {
-        return "rejection_design_request";
+        return "rejection_design_request_<ID>";
     }
 
     @Override

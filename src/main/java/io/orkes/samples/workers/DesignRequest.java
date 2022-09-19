@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class DesignRequest implements Worker {
     @Override
     public String getTaskDefName() {
-        return "design_request_approval";
+        return "design_request_approval_<ID>";
     }
 
     @Override

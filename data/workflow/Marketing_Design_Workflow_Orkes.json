@@ -4,7 +4,7 @@
   "version": 1,
   "tasks": [
     {
-      "name": "design_request_approval",
+      "name": "design_request_approval_<ID>",
       "taskReferenceName": "design_request_approval_ref",
       "inputParameters": {
         "client": "${workflow.input.client}",
@@ -25,7 +25,7 @@
       "loopOver": []
     },
     {
-      "name": "passed_design_request_approval",
+      "name": "passed_design_request_approval_<ID>",
       "taskReferenceName": "passed_design_request_approval_ref",
       "inputParameters": {
         "designApproved": "${design_request_approval_ref.output.approved}"
@@ -34,7 +34,7 @@
       "decisionCases": {
         "true": [
           {
-            "name": "wait_designer",
+            "name": "wait_designer_<ID>",
             "taskReferenceName": "wait_designer_ref",
             "inputParameters": {},
             "type": "WAIT",
@@ -49,7 +49,7 @@
             "loopOver": []
           },
           {
-            "name": "wait_campaign_manager",
+            "name": "wait_campaign_manager_<ID>",
             "taskReferenceName": "wait_campaign_manager_ref",
             "inputParameters": {},
             "type": "WAIT",
@@ -64,7 +64,7 @@
             "loopOver": []
           },
           {
-            "name": "wait_campaign_client",
+            "name": "wait_campaign_client_<ID>",
             "taskReferenceName": "wait_campaign_client_ref",
             "inputParameters": {},
             "type": "WAIT",
@@ -82,7 +82,7 @@
       },
       "defaultCase": [
         {
-          "name": "rejection_design_request",
+          "name": "rejection_design_request_<ID>",
           "taskReferenceName": "rejection_design_request_ref",
           "inputParameters": {},
           "type": "SIMPLE",
