@@ -1,6 +1,6 @@
 {
   "createdBy": "draft.dev",
-  "name": "design_request_approval",
+  "name": "design_request_approval_<ID>",
   "description": "Design request",
   "retryCount": 3,
   "timeoutSeconds": 3600,

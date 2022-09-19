@@ -1,6 +1,6 @@
 {
   "createdBy": "draft.dev",
-  "name": "rejection_design_request",
+  "name": "rejection_design_request_<ID>",
   "retryCount": 3,
   "timeoutSeconds": 30,
   "inputKeys": [

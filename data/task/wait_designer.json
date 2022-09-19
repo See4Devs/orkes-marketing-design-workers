@@ -1,6 +1,6 @@
 {
   "createdBy": "draft.dev",
-  "name": "wait_designer",
+  "name": "wait_designer_<ID>",
   "description": "Designer Content",
   "retryCount": 3,
   "timeoutSeconds": 3600,
